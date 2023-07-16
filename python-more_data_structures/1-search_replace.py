@@ -5,8 +5,17 @@ def search_replace(my_list, search, replace):
     return new_list
 
 # Test the function
-my_list = [1, 2, 3, 4, 5, 4, 2, 1, 1, 4, 89]
-new_list = search_replace(my_list, 2, 89)
+test_cases = [
+    ([1, 2, 3], 1, 0),
+    ([1, 2, 3], 2, 0),
+    ([1, 2, 3], 3, 0),
+    ([1, 2, 3], 4, 0),
+    ([1, 2, 3, 1, 1, 3, 6], 1, 0),
+    ([], 2, 0)
+]
 
-print(new_list)
-print(my_list)
+for my_list, search, replace in test_cases:
+    new_list = search_replace(my_list, search, replace)
+    print(f"Input: {my_list}, Search: {search}, Replace: {replace}")
+    print(f"Output: {new_list}")
+    print("-----")
